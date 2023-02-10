@@ -113,6 +113,7 @@ public class Song {
         static class Main {
 
             public static void main(String[] args) {
+                System.out.println("...............Añadiendo canciones...............");
                 ArrayList<Album> albums = new ArrayList<Album>(); //ArrayList de los albumes.
                 //Creacion de albumes y añadir las canciones a los albumes.
                 Album album = new Album("Use Your Illusion I", "Gun's N' Roses");
@@ -141,7 +142,7 @@ public class Song {
                 albums.get(0).addToPlaylist(1, lista); //Dust N' Bones
                 albums.get(0).addToPlaylist(2, lista); //Live and let die
                 albums.get(0).addToPlaylist(5, lista); //no existe la pista
-
+                System.out.println("...............Añadiendo canciones...............");
                 play(lista); //Llamamos a la funcion play
             }
 
@@ -281,22 +282,23 @@ public class Song {
                         }
                     }
                 } catch (InputMismatchException o) {
-                        System.out.println("Has puesto un caracter o varios carateres.");
-                        Main.main(null);
+                    System.out.println("Has puesto un caracter o varios carateres.");
+                    System.out.println('\n');
+                    Main.main(null);
 
-                    }
                 }
             }
+        }
 
-            private static void Menu() {
-                    System.out.println("Elije una opcion del 0-6: ");
-                    System.out.println("0 - Salir de la lista de reproducción.");
-                    System.out.println("1 - Reproducir siguiente canción en la lista.");
-                    System.out.println("2 - Reproducir la canción previa de la lista.");
-                    System.out.println("3 - Repetir la canción actual.");
-                    System.out.println("4 - Imprimir la lista de canciones en la playlist.");
-                    System.out.println("5 - Volver a imprimir el menú.");
-                    System.out.println("6 - Eliminar cancion actual de la playlist.");
-            }
+        private static void Menu() {
+            System.out.println("Elije una opcion del 0-6: ");
+            System.out.println("0 - Salir de la lista de reproducción.");
+            System.out.println("1 - Reproducir siguiente canción en la lista.");
+            System.out.println("2 - Reproducir la canción previa de la lista.");
+            System.out.println("3 - Repetir la canción actual.");
+            System.out.println("4 - Imprimir la lista de canciones en la playlist.");
+            System.out.println("5 - Volver a imprimir el menú.");
+            System.out.println("6 - Eliminar cancion actual de la playlist.");
         }
     }
+}
