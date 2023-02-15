@@ -80,7 +80,7 @@ public class Song {
         public boolean addSong(String titulo, double duracion) {
             if (findSong(titulo) == null) {
                 this.canciones.add(new Song(titulo, duracion));
-                System.out.println("Cancion nueva: " + titulo + ": " + duracion + ": " + "añadida.");
+                System.out.println("Cancion nueva: " + titulo + ": " + duracion + " min" + ": " + "añadida.");
                 return true;
             } else {
                 System.out.println("La cancion: " + titulo + " ya existe");
@@ -141,7 +141,7 @@ public class Song {
                 //Añadimos Canciones Primer album
                 albums.get(0).addToPlaylist(1, lista); //Dust N' Bones
                 albums.get(0).addToPlaylist(2, lista); //Live and let die
-                albums.get(0).addToPlaylist(5, lista); //no existe la pista
+                albums.get(0).addToPlaylist(4, lista); //no existe la pista
                 System.out.println("...............Añadiendo canciones...............");
                 play(lista); //Llamamos a la funcion play
             }
