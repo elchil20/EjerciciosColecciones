@@ -179,7 +179,6 @@ public class Song {
                                 break;
 
                             case 1:
-                                try {
                                     if (!haciaAdelante) {
                                         if (it.hasNext())
                                             it.next();
@@ -188,16 +187,16 @@ public class Song {
                                     if (it.hasNext()) {
                                         System.out.println("Reproduciendo siguiente cancion: " + it.next().getTitulo());
                                     } else {
-                                        System.out.println("No hay más canciones en la playlist.");
-                                        System.out.println("Reproduciendo: " + it.previous().getTitulo());
-                                        haciaAdelante = false;
+                                        if (lista2.isEmpty()) {
+                                            System.out.println("La lista esta vacia.");
+                                        } else {
+                                            System.out.println("No hay más canciones en la playlist.");
+                                            System.out.println("Reproduciendo: " + it.previous().getTitulo());
+                                            haciaAdelante = false;
+                                        }
                                     }
                                     Menu();
-                                } catch (NoSuchElementException a) {
-                                    System.out.println("La lista esta vacia.");
-                                    Menu();
-                                }
-                                break;
+                                    break;
 
                             case 2:
                                 if (haciaAdelante) {
@@ -209,7 +208,6 @@ public class Song {
                                     System.out.println("Reproduciendo anterior cancion: " + it.previous().getTitulo());
                                 } else {
                                     if (lista2.isEmpty()) {
-                                        System.out.println("No hay más canciones en la playlist.");
                                         System.out.println("La lista esta vacia.");
                                     } else {
                                         System.out.println("No hay mas canciones anteriores a: " + lista2.getFirst().getTitulo());
